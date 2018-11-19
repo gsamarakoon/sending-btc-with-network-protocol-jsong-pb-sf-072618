@@ -9,7 +9,38 @@ Send all of it back (minus fees) to `mwJn1YPMq7y5F8J3LkC5Hxg9PHyZ5K4cFv` using o
 ```python
 # Exercise 4.1
 
-from merkleblock import MerkleBlock, MerkleTree
+from time import sleep
+from block import Block
+from bloomfilter import (
+    BloomFilter,
+    BIP37_CONSTANT,
+)
+from ecc import PrivateKey
+from helper import (
+    bit_field_to_bytes,
+    decode_base58,
+    hash160,
+    hash256,
+    little_endian_to_int,
+    murmur3,
+    run,
+    SIGHASH_ALL,
+)
+from merkleblock import MerkleBlock
+from network import (
+    GetDataMessage,
+    GetHeadersMessage,
+    HeadersMessage,
+    SimpleNode,
+    FILTERED_BLOCK_DATA_TYPE,
+    TX_DATA_TYPE,
+)
+from tx import (
+    Tx,
+    TxIn,
+    TxOut,
+)
+from script import p2pkh_script
 
 last_block_hex = '<fill this in>'
 last_block = bytes.fromhex(last_block_hex)

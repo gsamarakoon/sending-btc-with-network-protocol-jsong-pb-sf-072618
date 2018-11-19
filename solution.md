@@ -7,12 +7,9 @@ Send all of it back (minus fees) to `mwJn1YPMq7y5F8J3LkC5Hxg9PHyZ5K4cFv` using o
 
 
 ```python
-# import everything and define a test runner function
-from importlib import reload
+# Exercise 4.1
+
 from time import sleep
-
-import bloomfilter, merkleblock
-
 from block import Block
 from bloomfilter import (
     BloomFilter,
@@ -38,12 +35,12 @@ from network import (
     FILTERED_BLOCK_DATA_TYPE,
     TX_DATA_TYPE,
 )
-from script import p2pkh_script
 from tx import (
     Tx,
     TxIn,
     TxOut,
 )
+from script import p2pkh_script
 
 # Exercise 4.1
 
